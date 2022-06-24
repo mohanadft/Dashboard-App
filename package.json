@@ -1,8 +1,7 @@
 {
 	"name": "dashboard-app",
 	"version": "0.1.0",
-	"homepage": "https://mohanadft.github.io/Dashboard-App",
-	"private": true,
+	"private": false,
 	"dependencies": {
 		"@syncfusion/ej2": "^19.4.48",
 		"@syncfusion/ej2-react-calendars": "^19.4.48",
