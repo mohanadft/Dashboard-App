@@ -3,7 +3,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom'
 import { FiSettings } from 'react-icons/fi'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 
-import { Navbar, ThemeSettings, Header, Sidebar } from './Components'
+import { Navbar, Sidebar } from './Components'
 import {
 	Area,
 	Bar,
