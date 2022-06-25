@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { HashRouter, Routes, , HashRouterRoute } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import { FiSettings } from 'react-icons/fi'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 
