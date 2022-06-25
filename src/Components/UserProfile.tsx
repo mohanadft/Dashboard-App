@@ -1,8 +1,6 @@
 import React from 'react'
 
-interface UserProfileProps {}
-
-const UserProfile: React.FC<UserProfileProps> = ({}) => {
+const UserProfile: React.FC = () => {
 	return <div>User Profile</div>
 }
 

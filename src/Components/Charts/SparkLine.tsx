@@ -1,8 +1,6 @@
 import React from 'react'
 
-interface SparkLineProps {}
-
-const SparkLine: React.FC<SparkLineProps> = ({}) => {
+const SparkLine: React.FC = () => {
 	return <div>Sprak Line</div>
 }
 

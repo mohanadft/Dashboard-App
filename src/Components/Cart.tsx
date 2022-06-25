@@ -1,8 +1,6 @@
 import React from 'react'
 
-interface CartProps {}
-
-const Cart: React.FC<CartProps> = ({}) => {
+const Cart: React.FC = () => {
 	return <div>Cart</div>
 }
 

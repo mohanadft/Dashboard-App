@@ -1,8 +1,6 @@
 import React from 'react'
 
-interface CalendarProps {}
-
-const Calendar: React.FC<CalendarProps> = ({}) => {
+const Calendar: React.FC = () => {
 	return <div>Calendar</div>
 }
 

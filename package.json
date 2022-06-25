@@ -1,5 +1,6 @@
 {
 	"name": "dashboard-app",
+	"homepage": "https://mohanadft.github.io/Dashboard-App/",
 	"version": "0.1.0",
 	"private": false,
 	"dependencies": {
@@ -20,6 +21,7 @@
 		"@types/node": "^16.11.41",
 		"@types/react": "^18.0.14",
 		"@types/react-dom": "^18.0.5",
+		"gh-pages": "^4.0.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-icons": "^4.4.0",
@@ -30,11 +32,11 @@
 	},
 	"scripts": {
 		"start": "react-scripts start",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
-		"eject": "react-scripts eject",
-		"predeploy": "npm run build",
-		"deploy": "gh-pages -d build"
+		"eject": "react-scripts eject"
 	},
 	"eslintConfig": {
 		"extends": [

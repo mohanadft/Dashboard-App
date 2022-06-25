@@ -1,6 +1,7 @@
 import Header from './Header'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
+import ThemeSettings from './ThemeSettings'
 import Notification from './Notification'
 import Footer from './Footer'
 import Chat from './Chat'
@@ -16,6 +17,7 @@ export {
 	Header,
 	Navbar,
 	Sidebar,
+	ThemeSettings,
 	Notification,
 	Footer,
 	Cart,

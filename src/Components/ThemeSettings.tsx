@@ -1,8 +1,6 @@
 import React from 'react'
 
-interface ThemeSettingsProps {}
-
-const ThemeSettings: React.FC<ThemeSettingsProps> = ({}) => {
+const ThemeSettings: React.FC = () => {
 	return <div>Theme Settings</div>
 }
 

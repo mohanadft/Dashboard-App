@@ -1,11 +1,32 @@
 import React, { useState } from 'react'
-import { HashRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, , HashRouterRoute } from 'react-router-dom'
 import { FiSettings } from 'react-icons/fi'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups'
-import { Calendar } from './Pages'
+
+import { Navbar, ThemeSettings, Header, Sidebar } from './Components'
+import {
+	Area,
+	Bar,
+	Calendar,
+	ColorMapping,
+	ColorPicker,
+	Customers,
+	Ecommerce,
+	Editor,
+	Employees,
+	Financial,
+	Kanban,
+	Line,
+	Orders,
+	Pyramid,
+	Stacked
+} from './Pages'
+
+import './App.css'
+import { useGlobalContext } from './Contexts/ContextProvider'
 
 const App: React.FC = () => {
-	const [activeMenu, setActiveMenu] = useState<boolean>(false)
+	const { activeMenu, setActiveMenu } = useGlobalContext()
 
 	return (
 		<div>
@@ -15,58 +36,53 @@ const App: React.FC = () => {
 						<TooltipComponent content="Settings" position="TopCenter">
 							<button
 								type="button"
-								onClick={() =>
-									setActiveMenu((prevState: boolean): boolean => !prevState)
-								}
 								className="text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
+								onClick={() => setActiveMenu(!activeMenu)}
 							>
-								<FiSettings
-									style={{ background: 'blue', borderRadius: '50%' }}
-									className="p-1"
-								/>
+								<FiSettings className="p-1 bg-amber-400 rounded-full" />
 							</button>
 						</TooltipComponent>
 					</div>
-					{activeMenu ? (
-						<div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white"></div>
-					) : (
-						<></>
+					{activeMenu && (
+						<div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white">
+							<Sidebar />
+						</div>
 					)}
 					<div
-						className={` ease-linear duration-150 dark:bg-main-bg bg-main bg min-h-screen w-full ${
+						className={`ease-linear duration-150 dark:bg-main-bg bg-main bg min-h-screen w-full ${
 							activeMenu ? 'md:ml-72' : 'flex-2'
 						}`}
 					>
 						<div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
-							Navbar
+							<Navbar />
 						</div>
 					</div>
 					<div>
 						<Routes>
 							{/* Dashboard */}
-							<Route path="/" element="ECommerce" />
-							<Route path="/ecommerce" element="" />
+							<Route path="/" element="A" />
+							<Route path="/ecommerce" element={<Ecommerce />} />
 
 							{/* Pages */}
-							<Route path="/orders" element="Orders" />
-							<Route path="/employees" element="Employees" />
-							<Route path="/customers" element="Customers" />
+							<Route path="/orders" element={<Orders />} />
+							<Route path="/employees" element={<Employees />} />
+							<Route path="/customers" element={<Customers />} />
 
 							{/* Apps */}
-							<Route path="/kanban" element="Kanban" />
-							<Route path="/editor" element="Editor" />
+							<Route path="/kanban" element={<Kanban />} />
+							<Route path="/editor" element={<Editor />} />
 							<Route path="/calendar" element={<Calendar />} />
-							<Route path="/color-picker" element="ColorPicker" />
+							<Route path="/color-picker" element={<ColorPicker />} />
 
 							{/* Charts */}
-							<Route path="/line" element="Line" />
-							<Route path="/area" element="Area" />
-							<Route path="/bar" element="Bar" />
+							<Route path="/line" element={<Line />} />
+							<Route path="/area" element={<Area />} />
+							<Route path="/bar" element={<Bar />} />
 							<Route path="/pie" element="Pie" />
-							<Route path="/financial" element="financial" />
-							<Route path="/color-mapping" element="ColorMapping" />
-							<Route path="/pyramid" element="Pyramid" />
-							<Route path="/stacked" element="Stacked" />
+							<Route path="/financial" element={<Financial />} />
+							<Route path="/color-mapping" element={<ColorMapping />} />
+							<Route path="/pyramid" element={<Pyramid />} />
+							<Route path="/stacked" element={<Stacked />} />
 
 							{/* Not Found */}
 							<Route path="*" element="Error 404, Not Found" />
