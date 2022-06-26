@@ -30,6 +30,7 @@ const Sidebar: React.FC = () => {
 										<li key={index}>
 											<NavLink
 												to={`/${name}`}
+												onClick={() => setActiveMenu(false)}
 												className={({ isActive }) => {
 													return isActive
 														? `flex gap-4 items-center text-xs pl-4 py-3 rounded-md w-60 bg-amber-300 capitalize`

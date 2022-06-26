@@ -4,9 +4,7 @@ import Sidebar from './Sidebar'
 import ThemeSettings from './ThemeSettings'
 import Notification from './Notification'
 import Footer from './Footer'
-import Chat from './Chat'
 import ChartsHeader from './ChartsHeader'
-import Cart from './Cart'
 import Button from './Button'
 import LineChart from './Charts/LineCart'
 import Pie from './Charts/Pie'
@@ -20,12 +18,10 @@ export {
 	ThemeSettings,
 	Notification,
 	Footer,
-	Cart,
 	ChartsHeader,
-	Chat,
 	Button,
 	LineChart,
 	Pie,
 	SparkLine,
-	Stacked
+	Stacked,
 }

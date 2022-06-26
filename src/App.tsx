@@ -37,7 +37,6 @@ const App: React.FC = () => {
 							<button
 								type="button"
 								className="text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
-								onClick={() => setActiveMenu(!activeMenu)}
 							>
 								<FiSettings className="p-1 bg-amber-400 rounded-full" />
 							</button>
