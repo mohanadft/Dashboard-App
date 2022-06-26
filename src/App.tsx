@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { HashRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { FiSettings } from 'react-icons/fi'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 
-import { Navbar, Sidebar } from './Components'
+import { Navbar, Pie, Sidebar } from './Components'
 import {
 	Area,
 	Bar,
@@ -30,7 +30,7 @@ const App: React.FC = () => {
 
 	return (
 		<div>
-			<HashRouter>
+			<BrowserRouter>
 				<div className="flex relative dark:bg-main-dark-bg">
 					<div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}>
 						<TooltipComponent content="Settings" position="TopCenter">
@@ -60,7 +60,7 @@ const App: React.FC = () => {
 					<div>
 						<Routes>
 							{/* Dashboard */}
-							<Route path="/" element="A" />
+							<Route path="/" element={<Ecommerce />} />
 							<Route path="/ecommerce" element={<Ecommerce />} />
 
 							{/* Pages */}
@@ -78,7 +78,7 @@ const App: React.FC = () => {
 							<Route path="/line" element={<Line />} />
 							<Route path="/area" element={<Area />} />
 							<Route path="/bar" element={<Bar />} />
-							<Route path="/pie" element="Pie" />
+							<Route path="/pie" element={<Pie />} />
 							<Route path="/financial" element={<Financial />} />
 							<Route path="/color-mapping" element={<ColorMapping />} />
 							<Route path="/pyramid" element={<Pyramid />} />
@@ -89,7 +89,7 @@ const App: React.FC = () => {
 						</Routes>
 					</div>
 				</div>
-			</HashRouter>
+			</BrowserRouter>
 		</div>
 	)
 }
