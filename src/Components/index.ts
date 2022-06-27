@@ -8,7 +8,6 @@ import ChartsHeader from './ChartsHeader'
 import Button from './Button'
 import LineChart from './Charts/LineCart'
 import Pie from './Charts/Pie'
-import SparkLine from './Charts/SparkLine'
 import Stacked from './Charts/Stacked'
 
 export {
@@ -22,6 +21,5 @@ export {
 	Button,
 	LineChart,
 	Pie,
-	SparkLine,
-	Stacked,
+	Stacked
 }
