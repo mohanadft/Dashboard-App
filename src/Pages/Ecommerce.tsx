@@ -2,21 +2,22 @@ import React from 'react'
 import { BsCurrencyDollar } from 'react-icons/bs'
 import { GoPrimitiveDot } from 'react-icons/go'
 import { Stacked, Pie, Button } from '../Components'
-import { earningData, SparklineAreaData, ecomPieChartData } from '../Data/dummy'
+import { earningData, ecomPieChartData } from '../Data/dummy'
 import { useGlobalContext } from '../Contexts/ContextProvider'
 import { stackedCustomSeries } from './../Data/dummy'
-import {
-	ChartComponent,
-	SeriesCollectionDirective,
-	SeriesDirective,
-	Inject,
-	Legend,
-	Category,
-	StackingColumnSeries,
-	Tooltip,
-	ILoadedEventArgs,
-	ChartTheme
-} from '@syncfusion/ej2-react-charts'
+import { ChartSeriesType } from '@syncfusion/ej2-charts/src/chart/utils/enum'
+
+let stackedCusSeries = stackedCustomSeries as {
+	dataSource: {
+		x: string
+		y: number
+	}[]
+	xName: string
+	yName: string
+	name: string
+	type: ChartSeriesType
+	background: string
+}[]
 
 const Ecommerce: React.FC = () => {
 	return (
@@ -102,60 +103,19 @@ const Ecommerce: React.FC = () => {
 								</p>
 							</div>
 							<button className="text-white bg-orange-300 w-fit p-2 rounded-md mt-20">
-								Download
+								Download Report
 							</button>
 						</div>
 						<div>
-							<ChartComponent
-								id="charts"
-								style={{ textAlign: 'center' }}
-								primaryXAxis={{
-									majorGridLines: { width: 0 },
-									minorGridLines: { width: 0 },
-									majorTickLines: { width: 0 },
-									minorTickLines: { width: 0 },
-									interval: 1,
-									lineStyle: { width: 0 },
-									labelIntersectAction: 'Rotate45',
-									valueType: 'Category'
-								}}
-								primaryYAxis={{
-									title: 'Sales',
-									lineStyle: { width: 0 },
-									minimum: 100,
-									maximum: 400,
-									interval: 100,
-									majorTickLines: { width: 0 },
-									majorGridLines: { width: 1 },
-									minorGridLines: { width: 1 },
-									minorTickLines: { width: 0 },
-									labelFormat: '{value}B'
-								}}
-								width="300px"
-								height="300px"
-								chartArea={{ border: { width: 0 } }}
-								tooltip={{ enable: true }}
-							>
-								<Inject
-									services={[StackingColumnSeries, Category, Legend, Tooltip]}
-								/>
-								<SeriesCollectionDirective>
-									<SeriesDirective
-										dataSource={stackedCustomSeries[0].dataSource}
-										xName="x"
-										yName="y"
-										name="Budget"
-										type="StackingColumn"
-									></SeriesDirective>
-									<SeriesDirective
-										dataSource={stackedCustomSeries[1].dataSource}
-										xName="x"
-										yName="y"
-										name="Expense"
-										type="StackingColumn"
-									></SeriesDirective>
-								</SeriesCollectionDirective>
-							</ChartComponent>
+							<Stacked
+								stackedCustomSeries={stackedCusSeries}
+								title="Sales"
+								min={100}
+								max={400}
+								interval={100}
+								width="350px"
+								height="350px"
+							/>
 						</div>
 					</div>
 				</div>
