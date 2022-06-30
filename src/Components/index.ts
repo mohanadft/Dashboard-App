@@ -1,4 +1,3 @@
-import Header from './Header'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import ThemeSettings from './ThemeSettings'
@@ -11,7 +10,6 @@ import Pie from './Charts/Pie'
 import Stacked from './Charts/Stacked'
 
 export {
-	Header,
 	Navbar,
 	Sidebar,
 	ThemeSettings,

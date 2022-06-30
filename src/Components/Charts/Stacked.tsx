@@ -73,20 +73,8 @@ const Stacked: React.FC<StackedProps> = ({
 		>
 			<Inject services={[StackingColumnSeries, Category, Legend, Tooltip]} />
 			<SeriesCollectionDirective>
-				<SeriesDirective
-					dataSource={stackedCustomSeries[0].dataSource}
-					xName={stackedCustomSeries[0].xName}
-					yName={stackedCustomSeries[0].yName}
-					name={stackedCustomSeries[0].name}
-					type={stackedCustomSeries[0].type}
-				></SeriesDirective>
-				<SeriesDirective
-					dataSource={stackedCustomSeries[1].dataSource}
-					xName={stackedCustomSeries[1].xName}
-					yName={stackedCustomSeries[1].yName}
-					name={stackedCustomSeries[1].name}
-					type={stackedCustomSeries[1].type}
-				></SeriesDirective>
+				<SeriesDirective {...stackedCustomSeries[0]}></SeriesDirective>
+				<SeriesDirective {...stackedCustomSeries[1]}></SeriesDirective>
 			</SeriesCollectionDirective>
 		</ChartComponent>
 	)

@@ -1,24 +1,31 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { SiShopware } from 'react-icons/si'
-import { MdOutlineCancel } from 'react-icons/md'
-import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 import { links } from '../Data/dummy'
 import { useGlobalContext } from './../Contexts/ContextProvider'
+import { AiOutlineCloseCircle } from 'react-icons/ai'
 
 const Sidebar: React.FC = () => {
 	const { setActiveMenu, activeMenu } = useGlobalContext()
 
 	return (
 		<div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10 pt-3">
-			<Link
-				to="/"
-				className="flex gap-2 items-center pl-2 w-fit text-md font-black dark:text-white text-slate-900"
-				onClick={() => setActiveMenu(false)}
-			>
-				<SiShopware />
-				<span>Shoppy</span>
-			</Link>
+			<div className="flex items-center justify-between">
+				<Link
+					to="/"
+					className="flex gap-2 items-center pl-2 w-fit text-md font-black dark:text-white text-slate-900"
+					onClick={() => setActiveMenu(false)}
+				>
+					<SiShopware />
+					<span>Shoppy</span>
+				</Link>
+				<button
+					className="mr-3 flex justify-center items-center text-2xl"
+					onClick={() => setActiveMenu(false)}
+				>
+					<AiOutlineCloseCircle />
+				</button>
+			</div>
 			<div className="ml-2 mt-7 flex flex-col gap-3">
 				{links.map(({ links, title }, index) => {
 					return (

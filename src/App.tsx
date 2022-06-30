@@ -32,7 +32,7 @@ const App: React.FC = () => {
 		<div>
 			<HashRouter>
 				<div className="flex relative dark:bg-main-dark-bg">
-					<div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}>
+					<div className="fixed right-4 bottom-4">
 						<TooltipComponent content="Settings" position="TopCenter">
 							<button
 								type="button"
@@ -43,19 +43,20 @@ const App: React.FC = () => {
 						</TooltipComponent>
 					</div>
 					{activeMenu && (
-						<div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white">
+						<div
+							className="fixed w-72 sidebar dark:bg-secondary-dark-bg bg-white"
+							style={{ zIndex: '99999' }}
+						>
 							<Sidebar />
 						</div>
 					)}
 					<div
-						className={`ease-linear duration-150 dark:bg-main-bg bg-main bg min-h-screen w-full ${
-							activeMenu ? 'md:ml-72' : 'flex-2'
-						}`}
+						className={`ease-linear duration-150 dark:bg-main-bg bg-main bg min-h-screen w-full`}
 					>
 						<div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
 							<Navbar />
 						</div>
-						<div>
+						<div className="w-full">
 							<Routes>
 								{/* Dashboard */}
 								<Route path="/" element={<Ecommerce />} />
